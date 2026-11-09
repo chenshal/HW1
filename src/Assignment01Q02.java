@@ -1,21 +1,22 @@
 public class Assignment01Q02 {
     public static void main(String[] args) {
         double actualPi = Math.PI;
-        double approxPi = 0;
+        double approxPi = 0.0;
         boolean minus = false; 
         int n = Integer.parseInt(args[0]);
-        for (int i = 0; i<n/2; i++)
+        for (int i = 0; i<n; i++)
         {
-            if (! minus)
+            if (minus == false)
             {
-                approxPi += 1/(2*i+1);
+                approxPi += (double)(1.0/(2*i+1));
                 minus = true;
             }
             else
-            {
-                approxPi -= 1/(2*i+1);
-                minus = false;
-            }
+                if (minus == true)
+                {
+                    approxPi -= (double)(1.0/(2*i+1));
+                    minus = false;
+                }
         }
         approxPi *= 4;
         System.out.println(approxPi + " " + actualPi);
