@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Assignment01Q05 {
     public static int BFS(int[][] m, int i, int j)
     {
@@ -7,10 +5,9 @@ public class Assignment01Q05 {
         visited[i] = true;
         int [] next = new int[m.length];
         next[0] = i;
-        int index2 = 0;
-        int [] parent = new int[m.length];
         int [] distance = new int[m.length];
         distance[i] = 0;
+        int index2 = 0;
         int index = 1;
         while (index2 < index)
         {
@@ -19,7 +16,6 @@ public class Assignment01Q05 {
             {
                 if (m[current][k] == 1 && !visited[k])
                 {
-                    parent[k] = current;
                     distance[k] = distance[current] + 1;
                     if (k==j)
                     {
