@@ -24,19 +24,19 @@ public class Assignment01Q04 {
     public static int[] shiftArrayCyclic(int[] array, int move, char direction) {
         if (array.length == 0)
             return array;
-        
+
         if (move > array.length)
             move = move%array.length;
         else if (move < -array.length)
             move = move%array.length;
 
-        if (direction == 'L' & move > 0)
+        if (direction == 'L' && move > 0)
             return shiftLeft(array, move);
-        else if (direction == 'R' & move > 0)
+        else if (direction == 'R' && move > 0)
                 return shiftRight(array, move);
-            else if (direction == 'L' & move < 0)
+            else if (direction == 'L' && move < 0)
                 return shiftRight(array, -move);
-                else if (direction == 'R' & move < 0)
+                else if (direction == 'R' && move < 0)
                     return shiftLeft(array, -move);
         return array;
     }
